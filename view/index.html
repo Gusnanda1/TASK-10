@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column1 {
+            float: left;
+            width: 60%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        .column2 {
+            float: left;
+            width: 40%;
+            padding: 10px;
+            height: 300px;
+            border-radius: 10px;
+
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+
+
+</head>
+
+<body style="margin: 0; background-color: rgb(182, 179, 179);">
+
+
+    <nav style="background-color: rgb(212, 205, 205); margin:0;">
+        <ul class=" navbar_item">
+            <li><img src="/public/image/brandred.png" style="width: 60px; padding-right: 20px;"></li>
+            <li><a href="/" style="color:red ;">Home</a></li>
+            <li><a href="/project" style="width:max-content ;">Add Project</a></li>
+            <li style="width: 100% ; display: flex; justify-content: flex-end; "> <button class="btn-contact">
+                    <a href="/contact" style="text-decoration: none; font-size: medium; color: white;">Contact
+                        Me</a> </button></li>
+        </ul>
+    </nav>
+
+    <nav class="row" style=" background-color: white; width: 80%; margin: auto; margin-top: 60px; height: 600px; margin-bottom:
+        60px; box-shadow: 1px 1px 10px;">
+        <div class="row">
+            <div class="column1" style="background-color:rgb(255, 255, 255);">
+                <h2>Hi Welcome to my hut</h2>
+                <p style="text-align :justify;">Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Sed tristique
+                    purus orci libero egestas ut. Augue suspendisse blandit
+                    lorem massa ipsum, uma, egestas mi, lacinia. Dui fusce etiam libero, lectus amet,
+                    risus molestie malesuada. Odio nam purus consectetur euismod
+                    congue leo quisque. turpis amet sollicitudin nunc non in lectus dolor
+                    amet. Amet ullamcorper faucibus tincidunt accumsan ac adipiscing arcu.
+                    Donec tristique at proin maecenas. Ante elit et iaculis ac sit.</p>
+
+                <ul style="width: 100% ; display: flex;">
+
+                    <li>
+                        <button style="color:white ; background-color: black; border-radius: 10px;
+                 width: 90px; height: 30px; ">contact
+                        </button>
+                    </li>
+
+                    <li>
+                        <p class="p2" style="color:black; list-style-type: none;">
+                            download cv
+                        </p>
+
+                    </li>
+
+                    <li>
+
+                        <img src="public/image/download.png" class="logo">
+                    </li>
+
+
+                </ul>
+
+                <ul style="margin-top: 50px;">
+                    <li>
+                        <img src="public/image/linkedin.png" class="logo2">
+                    </li>
+                    <li>
+                        <img src="public/image/instagram.png" class="logo2">
+                    </li>
+                    <li>
+                        <img src="public/image/facebook.png" class="logo2">
+                    </li>
+                    <li>
+                        <img src="public/image/twitter.png" class="logo2">
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="column2" style="background-color:rgb(255, 255, 255); box-shadow: 1px 1px 10px; height: 500px ;">
+                <img src="public/image/Tom.jpg" style=" width:100%; height: 350px; border-radius: 10px;">
+                <center>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ida Bagus
+                        Wikananda</h1>
+                    <p
+                        style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        Fullstack Developer</p>
+                </center>
+
+            </div>
+        </div>
+
+
+    </nav>
+
+    <div style="width:100% ; height:max-content; background-color:white; padding-bottom: 60px; ">
+        <h1 style="text-align:center ; margin-top:80px; padding-top: 60px;">MY PROJECT</h1>
+
+        <div style="width: 80%; background-color:white; margin:auto; height:max-content;margin-top: 40px; display: flex;"
+            id="content">
+            {{range $index, $data := .Projects }}
+            <!--naruto-->
+            <div
+                style="width: 40%; margin-right: 20px; box-shadow: 1px 1px 10px; height:max-content; padding-bottom: 15px; border-radius: 10px;">
+
+                <a href="project-detail/{{ $data.ID }}"><img class="poto_project" src="/public/image/naruto.png"
+                        style="width: 95%; border-radius: 10px;  margin-top: 10px; height: 220px; margin-left: 10px;"></a>
+                <h3 style="font-family:Arial, Helvetica, sans-serif ; margin-left: 10px; ">
+                    {{ $data.Project_name }}
+                </h3>
+                <div class="durasi" style="display:flex; margin-left: 10px; ">
+                    <p class="p_duration" style="font-family:Arial, Helvetica, sans-serif ;">Duration : </p>
+                    <p class="p_duration" style="font-family:Arial, Helvetica, sans-serif ;" id="count_day">6</p>
+                    <p class="p_duration" style="font-family:Arial, Helvetica, sans-serif ;" id="date_status">days
+                    </p>
+                </div>
+
+                <p
+                    style="font-family:sans-serif; text-align: justify; margin-left: 10px; margin-right: 100px; margin-top: 15px;">
+                    {{ $data.Description }}
+                </p>
+
+                <img class="icon" src="public/image/react_js.png" style="width: 30px;">
+                <img class="icon" src="public/image/node_js.png" style="width: 30px;">
+                <img class="icon" src="public/image/android.png" style="width: 30px;">
+                <img class="icon" src="public/image/typescript.png" style="width: 30px;">
+                <div class="button">
+
+                    <a href="/update-project/{{ $data.ID }}">
+                        <button style=" width: 47%; border-radius: 10px; height: 30px; margin-right: 5px; color: white;
+                        background-color: black; margin-left: 10px;">edit
+                        </button>
+
+                    </a>
+
+                    <a href="/delete-project/{{$data.ID}}">
+                        <button style="width: 47%; border-radius: 10px; height: 30px; color: white; background-color:
+                             black;">delete
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

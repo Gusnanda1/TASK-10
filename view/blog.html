@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+
+<body style="margin: 0; background-color: rgb(202, 194, 194);">
+
+
+    <div style="width:100% ;" class="navbar">
+        <nav style="background-color: rgb(212, 205, 205); margin:0;">
+            <ul class=" navbar_item">
+                <li><img src="/public/image/brandred.png" style="width: 40px; padding-right: 20px;"></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/project" style="width:max-content ;">Add Project</a></li>
+                <li style="width: 100% ; display: flex; justify-content: flex-end; "> <button class="btn-contact">
+                        <a href="/contact" style="text-decoration: none; font-size: medium; color: white;">Contact
+                            Me</a> </button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div style="width: 90% ; margin:auto; padding-top: 20px; height: max-content; padding-bottom: 30px;">
+
+        <h1 style="font-family:Arial, Helvetica, sans-serif ; text-align: center; ">{{ .ProjectDetail.Project_name }}
+        </h1>
+
+        <div style="width: 100% ; display: flex;">
+            <img src="/public/image/naruto.png" style="width: 60%; height: 400px; margin-top: 20px; ">
+
+            <div class="information">
+
+
+                <div style="margin-left: 25px;">
+                    <h3 style="margin:0; margin-top: 25px;">Duration</h3>
+                    <div style="display:flex; margin-left: 3px;  ">
+                        <img src="/public/image/calendar.png"
+                            style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                        <p class="txt">{{ .ProjectDetail.Start_Date }}</p>
+                        <p style="margin-left: 20px; margin-right:15px;"> - </p>
+                        <p class="txt">{{ .ProjectDetail.End_Date }}</p>
+                    </div>
+
+                    <div style="display:flex; margin-left: 3px;">
+                        <img src="/public/image/hourglass.png"
+                            style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                        <p class="txt">1 month</p>
+                    </div>
+
+                </div>
+
+                <div style="margin-left: 25px;">
+                    <h3 style="margin:0; margin-top: 15px;">Technologies</h3>
+
+                    <div style="display: flex;">
+                        <div style="display:flex; margin-left: 3px;  ">
+                            <img src="/public/image/node_js.png"
+                                style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                            <p class="txt">Node js</p>
+                        </div>
+
+                        <div style="display:flex; margin-left: 43px;">
+                            <img src="/public/image/react_js.png"
+                                style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                            <p class="txt">React js</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; ">
+                        <div style="display:flex; margin-left: 3px;  ">
+                            <img src="/public/image/typescript.png"
+                                style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                            <p class="txt">Typescript</p>
+                        </div>
+
+                        <div style="display:flex; margin-left: 25px;">
+                            <img src="/public/image/android.png"
+                                style="width: 20px ; margin-right: 10px; height: 15px; margin-top: 15px;">
+                            <p class="txt">Android</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="paragraf" style="width: 79%;">
+            <!-- <p style="text-align:justify ; font-family: Arial, Helvetica, sans-serif;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
+
+            </p>
+
+            <p style="text-align:justify ; font-family: Arial, Helvetica, sans-serif;">
+                It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+            </p>
+            <p style="text-align:justify ; font-family: Arial, Helvetica, sans-serif;">
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+                Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+                undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+                Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+                theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
+                sit amet..", comes from a line in section 1.10.32.
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+                embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true generator on the Internet. It uses a
+                dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate
+                Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
+                injected humour, or non-characteristic words etc.
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+                vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
+                qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+
+            </p> -->
+
+            <p>{{ .ProjectDetail.Description }}</p>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+
+
+</html>
